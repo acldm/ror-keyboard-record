@@ -1,0 +1,15 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  total: MyString
+  p2p: MyString
+  p2r: MyString
+  r2p: MyString
+  r2r: MyString
+
+two:
+  total: MyString
+  p2p: MyString
+  p2r: MyString
+  r2p: MyString
+  r2r: MyString

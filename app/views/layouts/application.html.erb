@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Td</title>
+    <%= csrf_meta_tags %>
+    <%= csp_meta_tag %>
+
+    <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
+  </head>
+
+  <body>
+    <header>
+      <% if logged_in? %>
+        <span><%= @current_user.name %></span>
+        <%= link_to "logout", logout_path %>
+      <% else %>
+        <span>please login!</span>
+      <% end %>
+    </header>
+    </header>
+    <%= yield %>
+    <%= debug(params) if Rails.env.development? %>
+  </body>
+</html>

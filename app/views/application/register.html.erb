@@ -1,0 +1,28 @@
+<main id="app">
+<h1>Register</h1>
+<%= form_for(@user) do |f| %>
+<div class="form-item">
+    <%= f.label :name, class: "field-name" %>
+    <%= f.text_field :name, class: "input" %>
+</div>
+<div class="form-item">
+    <%= f.label :email, class: "field-name" %>
+    <%= f.text_field :email, class: "input" %>
+</div>
+<div class="form-item">
+    <%= f.label :password, class: "field-name" %>
+    <%= f.text_field :password, class: "input"%>
+</div>
+<div class="form-item">
+    <%= f.label :password_confirmation, class: "field-name" %>
+    <%= f.text_field :password_confirmation, class: "input" %>
+</div>
+<div class: "form-item">
+    <div class: "btn-link-group">
+        <%= link_to "Login", login_path %>
+        <%= link_to "Forget Password", register_path %>
+    </div>
+    <%= f.submit "Create my accout", class: "btn" %>
+</div>
+<% end %>
+</main>

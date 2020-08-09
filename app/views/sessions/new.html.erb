@@ -1,0 +1,20 @@
+<main id="app">
+<h1>Login</h1>
+<%= form_for(:session, url: login_path) do |f| %>
+<div class="form-item">
+    <%= f.label :name, 'Username', class: 'field-name' %>
+    <%= f.text_field :name, class: 'input' %>
+</div>
+<div class="form-item">
+    <%= f.label :password, 'Password', class: 'field-name' %>
+    <%= f.password_field :password, class: 'input' %>
+</div>
+<div class="form-item">
+    <div class="btn-link-group">
+        <%= link_to "Register", register_path %>
+        <%= link_to "Forget Password", register_path %>
+    </div>
+    <%= f.submit "Enter", class: 'btn' %>
+</div>
+<% end %>
+</main>

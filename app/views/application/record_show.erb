@@ -1,0 +1,55 @@
+<main id="app">
+<div class="form-item">
+    <label class="field-name">Time Record</label>
+    <input id="total" class="input" type="text" value="<%= to_second @record.total %>" />
+</div>
+<div class="form-item">
+    <label class="field-name">Press to Press</label>
+    <input id="p2p" class="input" type="text" value=
+    "<%= map_second @record.p2p %>" />
+</div>
+<div class="form-item">
+    <label class="field-name">Press to Release</label>
+    <input id="p2r" class="input" type="text" value=
+    "<%= map_second @record.p2r %>"  />
+</div>
+<div class="form-item">
+    <label class="field-name">Please to Press</label>
+    <input id="r2p" class="input" type="text" value=
+    "<%= map_second @record.r2p %>"  />
+</div>
+<div class="form-item">
+    <label class="field-name">Release</label>
+    <input id="r2r" class="input" type="text" value=
+    "<%= map_second @record.r2r %>"  />
+</div>
+<div class="form-item">
+    <%= link_to "Back", root_path, class: "btn" %>
+    <button id="save" class="btn">Save Record</button>
+    <%= link_to "Enter", root_path, class: "btn" %>
+</div>
+</main>
+
+<script>
+    function download(filename, text) {
+    var element = document.createElement('a');
+    element.setAttribute('href', 'data:text/plain;charset=utf-8,' + encodeURIComponent(text));
+    element.setAttribute('download', filename);
+
+    element.style.display = 'none';
+    document.body.appendChild(element);
+
+    element.click();
+
+    document.body.removeChild(element);
+    }
+    const saveRecord = document.querySelector("#save");
+    saveRecord.addEventListener('click', () => {
+        let text = ["total", "p2p", "p2r", "r2p", "r2r"].map(key => {
+            const input = document.querySelector(`#${key}`)
+            return `${key}: ${input.value}`
+        });
+        let totalText = text.join("\n")
+        download("record.txt", totalText)
+    })
+</script>

@@ -1,0 +1,37 @@
+
+<main id="app">
+    <div class="form-item">
+        <label class="field-name">Content Input</label>
+        <textarea name="" id="content" cols="30" rows="10"></textarea>
+    </div>
+    <%= form_for(@record) do |f| %>
+    <div style="display: none;">
+        <div class="form-item">
+            <%= f.label :total %>
+            <%= f.text_field :total, id: 'total' %>
+        </div>
+        <div class="form-item">
+            <%= f.label :p2p %>
+            <%= f.text_field :p2p, id: 'p2p' %>
+        </div>
+        <div class="form-item">
+            <%= f.label :p2r %>
+            <%= f.text_field :p2r, id: 'p2r' %>
+        </div>
+        <div class="form-item">
+            <%= f.label :r2p %>
+            <%= f.text_field :r2p, id: 'r2p' %>
+        </div>
+        <div class="form-item">
+            <%= f.label :r2r %>
+            <%= f.text_field :r2r, id: 'r2r' %>
+        </div>
+    </div>
+    <div class="form-item">
+        <span></span>
+        <%= f.submit "Enter", class: "btn", id: "submit" %>
+    </div>
+    <% end %>
+</main>
+
+ <%= javascript_pack_tag 'main' %>
