@@ -31,7 +31,7 @@ const Main = (function (e) {
 
     const calcDiffList = (list) => {
         const times = [];
-        for (let i = 0; i < list.length - 2; i+=1) {
+        for (let i = 0; i < list.length - 2; i += 1) {
             const pt = list[i].time;
             const nt = list[i + 1].time;
             times.push(nt - pt);
@@ -65,21 +65,22 @@ const Main = (function (e) {
     }
 });
 
-window.addEventListener('load', () => {
-    const content = document.querySelector("#content");
-    let func = Main(content);
-    window.func = func;
-    const submit = document.querySelector("#submit");
-    const total = document.querySelector("#total");
-    const p2p = document.querySelector("#p2p");
-    const p2r = document.querySelector("#p2r");
-    const r2p = document.querySelector("#r2p");
-    const r2r = document.querySelector("#r2r");
-    submit.addEventListener('click', e => {
-        total.value = func.getTotalTime();
-        p2p.value = func.p2p().join(",");
-        p2r.value = func.p2r().join(",");
-        r2p.value = func.r2p().join(",");
-        r2r.value = func.r2r().join(",");
-    })
+// window.addEventListener('load', () => {
+//     console.log("load");
+const content = document.querySelector("#content");
+let func = Main(content);
+window.func = func;
+const submit = document.querySelector("#submit");
+const total = document.querySelector("#total");
+const p2p = document.querySelector("#p2p");
+const p2r = document.querySelector("#p2r");
+const r2p = document.querySelector("#r2p");
+const r2r = document.querySelector("#r2r");
+submit.addEventListener('click', e => {
+    total.value = func.getTotalTime();
+    p2p.value = func.p2p().join(",");
+    p2r.value = func.p2r().join(",");
+    r2p.value = func.r2p().join(",");
+    r2r.value = func.r2r().join(",");
 })
+// })
